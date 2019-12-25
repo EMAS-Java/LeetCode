@@ -1,0 +1,109 @@
+
+public class LinkedList {
+
+	ListNode head;
+	LinkedList result;
+	String s1, s2, rev1, rev2;
+	int num1, num2;
+	String sum3;
+
+	public LinkedList() {
+
+		result = new LinkedList();
+		s1 = new String();
+		s2 = new String();
+		rev1 = new String();
+		rev2 = new String();
+		sum3 = new String();
+	}
+
+	public LinkedList addTwoNumbers(LinkedList l1, LinkedList l2) {
+
+		ListNode curr = l1.head;
+		while (curr != null) {
+
+			s1 += curr.getData();
+
+		}
+
+		ListNode curr2 = l2.head;
+
+		while (curr2 != null) {
+
+			s2 += curr2.getData();
+
+		}
+
+		return result;
+
+	}
+
+	public void reverse() {
+
+		for (int i = s1.length(); i >= 0; i--) {
+
+			rev1 += s1.charAt(i);
+			rev2 += s2.charAt(i);
+
+		}
+
+		num1 = Integer.valueOf(rev1);
+		num2 = Integer.valueOf(rev2);
+
+	}
+
+	public void add() {
+
+		int sum = num1 + num2;
+		String sum2 = new String();
+		sum2 = Integer.toString(sum);
+
+		for (int i = sum2.length(); i >= 0; i--) {
+
+			sum3 += sum2.charAt(i);
+
+		}
+	}
+
+	public void append() {
+
+		ListNode last = result.head;
+
+		while (last.getNext() == null) {
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class ListNode {
+	private int data;
+	private ListNode next;
+
+	public ListNode(int data) {
+		this.data = data;
+		next = null;
+	}
+
+	public int getData() {
+		return data;
+	}
+
+	public void setData(int data) {
+		this.data = data;
+	}
+
+	public ListNode getNext() {
+		return next;
+	}
+
+	public void setNext(ListNode next) {
+		this.next = next;
+	}
+
+}
