@@ -1,0 +1,55 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution5 {
+	
+	  public static String longestPalindrome(String s) {
+		  String r = "";
+		  int max = 0;
+		  
+		  Map<Integer, String > m = new HashMap<Integer,String>();
+		  
+		
+		  for (int i =0; i<s.length(); i++) {
+			 
+			  
+			  String pal = "";
+			  System.out.println(pal);
+			 
+			 
+			  pal+=s.charAt(i);
+			  
+			  for (int j = i+1; j<s.length();j++) {
+				  pal+=s.charAt(j);
+				  if (s.charAt(i)==s.charAt(j) ) {
+					  
+					 
+					  
+					  r = pal;
+					  m.put(r.length(),r);
+					  if (pal.length()> max) {
+						  max = pal.length();
+					  }
+					  
+					  break;
+					  
+					  
+					  
+				  }
+			  }  
+			
+		  }
+		  
+		  System.out.println(m);
+		return m.get(max);
+	        
+	    }
+
+	public static void main(String[] args) {
+		
+		String s = "babbd";
+		System.out.println(longestPalindrome(s));
+		
+	}
+
+}
