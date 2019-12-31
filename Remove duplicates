@@ -1,0 +1,89 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Removeduplicates {
+	
+	public static void removedup(int []arr) {
+		
+		Map < Integer, Integer> map = new HashMap<Integer, Integer> ();	
+		
+		for ( int i = 0; i<arr.length; i++) {
+			
+			if (map.containsKey(arr[i])) {
+				
+				int count = map.get(arr[i]);
+				
+				count++;
+				map.put(arr[i], count);
+				
+			}
+			
+			else {
+				
+				map.put(arr[i], 1);
+				
+			}
+			
+			
+				
+		}
+			
+			
+	System.out.println(map);
+		
+	}
+	
+	
+	public static void remove(String s) {
+		
+		String my = " ";
+		for ( int i = 0; i<s.length();i++) {
+			String temp = String.valueOf(s.charAt(i));
+			if (!my.contains(temp)) {
+				my+=s.charAt(i);
+			}
+			
+		}
+		System.out.print(my);
+	}
+		
+		
+	
+	public static void removedup2(int []arr) {
+		String s = " ";
+		for (int i =0; i<arr.length;i++) {
+			if (s.contains(String.valueOf(arr[i]))) {
+				continue;
+			}
+			
+			s+=String.valueOf(arr[i]);
+		}
+		
+		for (int i = 0; i<s.length();i++) {
+			int k = Integer.valueOf(arr[i]);
+		System.out.print(k*10+" ");
+		}
+	}
+	
+	public static void removedup3(int []arr) {
+		Set <Integer> set = new HashSet<Integer>();
+		for (int i =0; i<arr.length;i++) {
+			
+			set.add(arr[i]);	
+		}
+		System.out.println(set);
+		
+	}
+
+	public static void main(String[] args) {
+		
+		int [] arr = {2,4,3,1,4,2,4 };
+		removedup(arr);
+		String s = "hello";
+		//remove (s);
+		
+	}
+
+}
